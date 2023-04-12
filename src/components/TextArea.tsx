@@ -21,12 +21,12 @@ export const TextArea = ({ type, loading, value, onChange }: Props) => {
     : { ...commonStyles, backgroundColor: '#f5f5f5' }
 
   return (
-        <Form.Control
-            autoFocus={type === SectionType.From}
-            as='textarea'
-            placeholder={getPlaceholder({ type, loading })}
-            style={styles}
-            value={value}
-        />
+    <Form.Control
+      autoFocus={type === SectionType.From}
+      as='textarea'
+      placeholder={getPlaceholder({ type, loading })}
+      style={styles}
+      value={value}
+    />
   )
 }
