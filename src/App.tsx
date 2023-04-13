@@ -8,9 +8,22 @@ import { ArrowsIcon } from './components/icons'
 import { LanguageSelector } from './components/LanguageSelector'
 import { SectionType } from './types.d'
 import { TextArea } from './components/TextArea'
+import { useEffect } from 'react'
+import { translate } from './services/translate'
 
 function App () {
   const { fromLanguage, setFromLanguage, toLanguage, fromText, setFromText, result, setResult, interchangeLanguages, setToLanguage, loading } = useStore()
+
+  useEffect(() => {
+    if (fromText === '') return
+
+    translate({ fromLanguage, toLanguage, text: fromText })
+      .then((result) => {
+        if (result == null) return
+        setResult(result)
+      })
+      .catch(() => { setResult('Error') })
+  }, [fromText, fromLanguage, toLanguage])
 
   return (
     <Container fluid>
