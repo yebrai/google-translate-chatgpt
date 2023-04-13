@@ -11,8 +11,8 @@ const commonStyles = { border: 0, height: '200px', resize: 'none' }
 
 const getPlaceholder = ({ type, loading }: { type: SectionType, loading?: boolean }) => {
   if (type === SectionType.From) return 'Introducir texto'
-  if (loading === true) return 'Cargando ...'
-  return 'Traduccion'
+  if (loading === true) return 'Cargando...'
+  return 'Traducción'
 }
 
 export const TextArea = ({ type, loading, value, onChange }: Props) => {
