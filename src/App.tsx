@@ -10,7 +10,7 @@ import { SectionType } from './types.d'
 import { TextArea } from './components/TextArea'
 
 function App () {
-  const { fromLanguage, setFromLanguage, toLanguage, fromText, setFromText, result, setResult, interchangeLanguages, setToLanguage } = useStore()
+  const { fromLanguage, setFromLanguage, toLanguage, fromText, setFromText, result, setResult, interchangeLanguages, setToLanguage, loading } = useStore()
 
   return (
     <Container fluid>
@@ -25,9 +25,9 @@ function App () {
               value={fromLanguage}
               onChange={setFromLanguage} />
             <TextArea
-            type={SectionType.From}
-            value={fromText}
-            onChange={setFromText}
+              type={SectionType.From}
+              value={fromText}
+              onChange={setFromText}
             />
           </Stack>
         </Col>
@@ -42,9 +42,10 @@ function App () {
               value={toLanguage}
             />
             <TextArea
-            type={SectionType.To}
-            value={result}
-            onChange={setResult}
+              loading={loading}
+              type={SectionType.To}
+              value={result}
+              onChange={setResult}
             />
           </Stack>
         </Col>
