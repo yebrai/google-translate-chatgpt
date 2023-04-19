@@ -25,7 +25,7 @@ function App () {
         if (result == null) return
         setResult(result)
       })
-      .catch(() => { setResult('Error') })
+      .catch(() => { setResult('API Busy or disabled, try it later') })
   }, [debouncedFromText, fromLanguage, toLanguage])
 
   const handleClipboard = () => { navigator.clipboard.writeText(result).catch(() => {}) }
