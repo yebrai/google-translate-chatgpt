@@ -2,7 +2,7 @@ import { ChatCompletionRequestMessageRoleEnum, Configuration, OpenAIApi } from '
 import { SUPPORTED_LANGUAGES } from '../constants'
 import { type Language, type FromLanguage } from '../types'
 
-const apiKey = import.meta.env.VITE_API_KEY
+const apiKey = import.meta.env.VITE_OPENAI_API_KEY
 
 const configuration = new Configuration({ apiKey })
 const openai = new OpenAIApi(configuration)
