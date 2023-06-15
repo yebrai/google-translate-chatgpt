@@ -19,6 +19,7 @@ function App () {
 
   useEffect(() => {
     if (fromText === '') return
+    console.log(result)
 
     translate({ fromLanguage, toLanguage, text: debouncedFromText })
       .then((result) => {
